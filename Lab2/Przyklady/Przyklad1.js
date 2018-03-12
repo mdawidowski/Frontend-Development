@@ -5,4 +5,4 @@ var obj = {
 }
 console.log(obj.imie);
 obj.miasto = "Gdansk";
-console.log(obj.miasto);
+console.log(obj);
