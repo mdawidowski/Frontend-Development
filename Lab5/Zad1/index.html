@@ -3,14 +3,22 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <title>Title</title>
 </head>
 
 <body>
-  <input id="q"><br />
+  <div class="container">
+    <h2>Wpisz tekst aby wyszukać hasła w Wikipedii</h2>
+  </div>
+  <div class="container">
+    <div class="jumbotron">
 
-  <div id="results">
+    <input id="q"><br />
+    <div id="results">
 
+    </div>
+  </div>
   </div>
 
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
@@ -18,4 +26,5 @@
   <script src="/search.js"></script>
 
 </body>
+
 </html>
