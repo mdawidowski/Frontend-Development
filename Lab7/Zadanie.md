@@ -1,0 +1,2 @@
+- Przerobić tutorial Tour of Heroes z angular.io do punktu 5
+- Wrzucić na Github projekt o samochodach wzorowany na powyższym tutorialu
