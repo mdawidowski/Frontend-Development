@@ -1,0 +1,11 @@
+<h2>My Brands</h2>
+
+<ul class="brand">
+  <li *ngFor="let brand of brands"
+    [class.selected]="brand === selectedBrand"
+    (click)="onSelect(brand)">
+    <span class="badge">{{brand.id}}</span> {{brand.name}}
+  </li>
+</ul>
+
+<app-brand-detail [brand]="selectedBrand"></app-brand-detail>
