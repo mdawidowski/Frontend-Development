@@ -1,0 +1,20 @@
+{"cars":[
+    { "brand":"Fiat", "nationality":"Italy"},
+    { "brand":"McLaren", "nationality":"Great Britain"},
+    { "brand":"Lada", "nationality":"Russia"},
+    { "brand":"Aston Martin", "nationality":"Great Britain"},
+    { "brand":"Ferrari", "nationality":"Italy"},
+    { "brand":"Ford", "nationality":"USA"},
+    { "brand":"Chevrolet", "nationality":"USA"},
+    { "brand":"Polonez", "nationality":"Poland"},
+    { "brand":"Skoda", "nationality":"Czech Republic"},
+    { "brand":"Lancia", "nationality":"Italy"},
+    { "brand":"Toyota", "nationality":"Japan"},
+    { "brand":"Nissan", "nationality":"Japan"},
+    { "brand":"Volkswagen", "nationality":"Germany"},
+    { "brand":"Audi", "nationality":"Germany"},
+    { "brand":"Opel", "nationality":"Germany"},
+    { "brand":"Bugatti", "nationality":"France"},
+    { "brand":"Porsche", "nationality":"Germany"},
+    { "brand":"BMW", "nationality":"Germany"}
+]}
