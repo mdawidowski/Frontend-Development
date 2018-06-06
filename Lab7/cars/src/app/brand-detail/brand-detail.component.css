@@ -1,4 +1,8 @@
 /* brandsComponent's private CSS styles */
+.unselected {
+  background-color: white;
+  color: #CFD8DC !important;
+}
 .selected {
   background-color: #CFD8DC !important;
   color: white;
@@ -46,4 +50,3 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
- 

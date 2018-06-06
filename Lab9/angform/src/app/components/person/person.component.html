@@ -1,0 +1,12 @@
+<form [formGroup]="myForm" (ngSubmit)="mySubmit(myForm.value)" >
+  <input type="text" [formControl]="myForm.controls['imie']">
+
+  <div *ngIf="imie.hasError('required')">Imie wymagane</div>
+  <div *ngIf="imie.hasError('minLength')">Imie musi mieć przynajmniej 3 litery</div>
+  <div *ngIf="imie.hasError('bolekValue')">Bolek denied</div>
+
+  <input type="text" [formControl]="myForm.controls['rokUr']">
+  <div *ngIf="rokUr.hasError('min')">Zły rok urodzenia</div>
+
+<button type="submit">OK</button>
+</form>

@@ -1,11 +1,12 @@
 <h2>My Brands</h2>
 
 <ul class="brand">
-  <li *ngFor="let brand of brands"
+  <p *ngFor="let brand of brands"
+    [class.unselected]="brand !== selectedBrand"
     [class.selected]="brand === selectedBrand"
     (click)="onSelect(brand)">
     <span class="badge">{{brand.id}}</span> {{brand.name}}
-  </li>
+  </p>
 </ul>
-
+<hr color="black">
 <app-brand-detail [brand]="selectedBrand"></app-brand-detail>

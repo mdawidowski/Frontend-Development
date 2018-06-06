@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" (ngSubmit)="mySubmit(myForm.value)" >
+  <input type="text" [formControl]="myForm.controls['brand']">
+
+  <div *ngIf="brand.hasError('required')">Brand required</div>
+  <div *ngIf="brand.hasError('minLength')">Name must have at least 3 letters</div>
+  <div *ngIf="brand.hasError('wrongValue')">Vauxhall denied, it's Opel</div>
+  <div *ngIf="brand.hasError('notBigValue')">First letter must be capital</div>
+
+  <input type="text" [formControl]="myForm.controls['founded']">
+  <div *ngIf="founded.hasError('min')">Zły rok urodzenia</div>
+
+<button type="submit">OK</button>
+</form>
