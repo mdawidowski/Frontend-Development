@@ -1,5 +1,5 @@
 <input type="search" placeholder="Search term" [formControl]="searchControl" >
 <ul>
-<li *ngFor="let searchTerm of searchItems"> {{ searchTerm }} </li>
+<li *ngFor="let searchTerm of searchItems "> {{ searchTerm }} </li>
 </ul>
-<li *ngFor="let car of cars"> {{ car }}</li>
+<li *ngFor="let car of cars"> {{ car.brand }}</li>

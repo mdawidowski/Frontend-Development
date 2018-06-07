@@ -17,9 +17,27 @@
 
 </form>
 </div>
-
 <div class="container">
-  <ul>
-    <li *ngFor="let car of cars">{{car.brand}}</li>
+  <h3>Cars in collection</h3>
+<ul class="cars">
+  <li *ngFor="let car of cars"
+    [class.selected]="car === selectedCar"
+    (click)="onSelect(car)">
+    <span class="badge">{{car.brand}}</span>
+  </li>
 </ul>
+
+</div>
+<div *ngIf="selectedCar">
+
+  <h3>{{ selectedCar.brand }} Details</h3>
+  <div>
+    <label>Brand:
+      <input [(ngModel)]="selectedCar.brand" placeholder="brand">
+    </label>
+    <label>Year founded:
+      <input [(ngModel)]="selectedCar.founded" placeholder="Year founded">
+    </label>
+</div>
+
 </div>
