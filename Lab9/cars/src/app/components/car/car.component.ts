@@ -10,33 +10,32 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-
   myForm: FormGroup;
   brand: AbstractControl;
   founded: AbstractControl;
-
-  cars: Observable<Car>
+  cars: Car[];
   constructor(fb: FormBuilder, private carService: CarService) {
     this.myForm = fb.group({
-      'brand':['Brand', Validators.compose([
-        Validators.required, Validators.minLength(3),this.myBrandValidator, this.myFirstLetterBigValidator
+      'brand':['', Validators.compose([
+        Validators.required, Validators.minLength(3),this.myBrandValidator, this.myFirstLetterBigValidator, this.myIsNumberValidator
       ])],
-      'founded':['Year founded', Validators.compose([
-        Validators.min(1970)
+      'founded':['', Validators.compose([
+        Validators.min(1700), this.myNumbersOnlyValidator
       ])]
     });
 
     this.brand = this.myForm.controls['brand'];
     this.founded = this.myForm.controls['founded'];
-    carService.getCars().subscribe( p => console.log(p))
   }
 
   ngOnInit() {
+    this.getCars();
   }
 
   mySubmit(value: any){
-    const car = new Car(this.brand.value, this.founded.value);
+    let car = new Car(this.brand.value, this.founded.value);
     this.carService.addCars(car);
+    console.log(this.carService.getCars());
   }
 
   myBrandValidator(control: FormControl){
@@ -54,4 +53,22 @@ export class CarComponent implements OnInit {
       }
     }
   }
+  myIsNumberValidator(control: FormControl){
+    if (control.value.match(/[0-9]/)) {
+        return{
+          'numberValue':true
+        }
+    }
+  }
+  myNumbersOnlyValidator(control: FormControl){
+    if (control.value.match(/[A-z]/)) {
+        return{
+          'notNumber':true
+        }
+    }
+  }
+  getCars(): void {
+   this.carService.getCars()
+       .subscribe(cars => this.cars = cars);
+ }
 }

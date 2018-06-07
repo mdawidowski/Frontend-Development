@@ -1,13 +1,25 @@
-<form [formGroup]="myForm" (ngSubmit)="mySubmit(myForm.value)" >
-  <input type="text" [formControl]="myForm.controls['brand']">
+<div class="container">
+  <h3>Add another Car</h3>
+<form name="myForm" [formGroup]="myForm" (ngSubmit)="mySubmit(myForm.value)"  >
+  <input name="brand" ng-model="brand" type="text" placeholder="Brand" [formControl]="myForm.controls.brand" required>
 
   <div *ngIf="brand.hasError('required')">Brand required</div>
   <div *ngIf="brand.hasError('minLength')">Name must have at least 3 letters</div>
   <div *ngIf="brand.hasError('wrongValue')">Vauxhall denied, it's Opel</div>
   <div *ngIf="brand.hasError('notBigValue')">First letter must be capital</div>
+  <div *ngIf="brand.hasError('numberValue')">You cannot use numbers</div>
 
-  <input type="text" [formControl]="myForm.controls['founded']">
-  <div *ngIf="founded.hasError('min')">Zły rok urodzenia</div>
+  <input type="text" placeholder="Year founded" [formControl]="myForm.controls['founded']" >
+  <div *ngIf="founded.hasError('min')">Wrong foundation year</div>
+  <div *ngIf="founded.hasError('notNumber')">You have to use only digits</div>
 
 <button type="submit">OK</button>
+
 </form>
+</div>
+
+<div class="container">
+  <ul>
+    <li *ngFor="let car of cars">{{car.brand}}</li>
+</ul>
+</div>
