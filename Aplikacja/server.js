@@ -27,6 +27,6 @@ app.route('/api/cars/:brand').put((req, res) => {
   res.send(200, req.body);
 });
 
-app.route('/api/cars/:brand').delete((req, res) => {
+app.route('/api/cars/:nd').delete((req, res) => {
   res.sendStatus(204);
 });
