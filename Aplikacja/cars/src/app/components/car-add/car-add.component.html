@@ -1,0 +1,52 @@
+<div class="add-car-form">
+  <form [formGroup]="newCarForm" (ngSubmit)="onSubmit(newCarForm.value)" novalidate>
+
+    <div class="form-group">
+      <label>Brand</label>
+      <input [ngClass]="{'form-control': true,
+                           'is-valid': newCarForm.get('brand').touched && newCarForm.get('brand').valid,
+                           'is-invalid':newCarForm.get('brand').touched && newCarForm.get('brand').invalid}" type="text" formControlName="brand">
+      <div class="invalid-feedback">
+        Value must be letters only with first capital letter
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Model</label>
+      <input [ngClass]="{'form-control': true,
+                           'is-valid': newCarForm.get('model').touched && newCarForm.get('model').valid,
+                           'is-invalid': newCarForm.get('model').touched && newCarForm.get('model').invalid}" type="text" formControlName="model">
+      <div class="invalid-feedback">
+        Value must be letters only with first capital letter
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Nationality</label>
+      <input [ngClass]="{'form-control': true,
+                           'is-valid': newCarForm.get('nationality').touched && newCarForm.get('nationality').valid,
+                           'is-invalid': newCarForm.get('nationality').touched && newCarForm.get('nationality').invalid}" type="text" formControlName="nationality">
+      <div class="invalid-feedback">
+        Value must be letters only with first capital letter
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label>Price</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">€</div>
+        </div>
+        <input [ngClass]="{'form-control': true,
+                           'is-valid': newCarForm.get('price').touched && newCarForm.get('price').valid,
+                           'is-invalid': newCarForm.get('price').touched && newCarForm.get('price').invalid}" type="text" formControlName="price">
+        <div class="invalid-feedback">
+          Value must be digits only
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Add</button>
+  </form>
+</div>

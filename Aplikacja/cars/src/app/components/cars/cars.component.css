@@ -1,16 +1,5 @@
-input.ng-invalid {
-    background-color:pink;
-}
-input.ng-valid {
-    background-color:lightgreen;
-}
-input.ng-untouched {
-  background-color:white;
-}
-
-/* HeroesComponent's private CSS styles */
 .selected {
-  background-color: #CFD8DC !important;
+  background-color: #9aa3a7 !important;
   color: white;
 }
 .cars {

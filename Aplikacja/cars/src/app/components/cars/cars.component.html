@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-5">
+        <app-car-add (formSubmitted)="carAdded()"></app-car-add><br/><br/>
+      </div>
+      <div class="col-md-4">
+        <ul class="cars">
+          <h2>My garage:</h2>
+          <app-cars-search (searchQuery)="updateList($event)"></app-cars-search><br/><br/>
+          <li *ngFor="let car of listToShow" (click)="select(car)" [class.selected]="car === selectedCar">
+            <strong> {{car.brand}}</strong> {{car.model}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <app-cars-details *ngIf="selectedCar" [car]="selectedCar"></app-cars-details>
+      </div>
+  </div>
+</div>
